@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 
 
-export default function player() {
+export default function Player() {
 
     const [player, setPlayer] = useState({
             name: '',

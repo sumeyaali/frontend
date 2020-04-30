@@ -1,14 +1,24 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-// import {useDispatch, useSelector} from "react-redux";
-import {registerAction} from "../actions/onBoardingActions";
+import {registerAction} from "../actions/onboardingActions";
+// import { FormControl,Input,InputLabel,FormHelperText,FormLabel} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 
-
-
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(2),
+        width: '60ch',
+      },
+    },
+  }));
 
 const Register = (props) => {
 
+const classes = useStyles();
 // const dispatch = useDispatch()
 
 const [newUser,setNewUser] = useState({
@@ -28,21 +38,26 @@ const [newUser,setNewUser] = useState({
         e.preventDefault();
         props.registerAction(newUser)
     }
+
     return (
-        <div>
-            <form onSubmit={signUp}>
-            <h1>Registration</h1>
+        <div className='registration' >
+            <h1 className='regis'>Registration</h1>
+            <form className={classes.root} onSubmit={signUp}>
+            
             {/* <input
             type='text'
             name='name'
             placeholder='Name'
             onChange={handleChanges}
             /> */}
-
-            <input
+            
+            <TextField
             type='text'
             name='username'
-            placeholder='Username'
+            id="outlined-secondary"
+            label="Username"
+            variant="outlined"
+            color="primary"
             onChange={handleChanges}
             />
 
@@ -52,24 +67,30 @@ const [newUser,setNewUser] = useState({
             placeholder='Email'
             onChange={handleChanges}
             /> */}
-
-            <input
-             type='password'
-             name='password1'
-             placeholder='Password'
-             onChange={handleChanges}
+            <br/>
+            <TextField
+            type='password'
+            name='password1'
+            id="outlined-secondary"
+            label="Password"
+            variant="outlined"
+            color="primary"
+            onChange={handleChanges}
             />
-
-            <input
-             type='password'
-             name='password2'
-             placeholder='Password'
-             onChange={handleChanges}
+            <br/>
+            <TextField
+            type='password'
+            name='password2'
+            id="outlined-secondary"
+            label="Verify Password"
+            variant="outlined"
+            color="primary"
+            onChange={handleChanges}
             />
-
-            <button type="submit">
-                Sign Up
-            </button>
+            <br/>
+            <Button size ="large" variant="contained" color="Primary" type="submit">
+            Sign Up
+            </Button>
           
         </form>
         </div>

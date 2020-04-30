@@ -12,7 +12,7 @@ import React,{useState} from 'react';
 // In one room
 // error message, list of items, Title,description of room, array of players
 
-export default function room() {
+export default function Room() {
 
     const [rooms, setRooms] = useState({
             title: '',

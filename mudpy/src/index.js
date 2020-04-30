@@ -4,15 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from "react-redux";
-import {createStore, applyMiddleware} from "redux";
+import {createStore, applyMiddleware,combineReducers} from "redux";
 import thunk from "redux-thunk"
 import { BrowserRouter as Router} from 'react-router-dom'
+import logger from 'redux-logger'
+import onboardingReducer from "./reducers/onboardingReducer"
+import gameReducer from "./reducers/gameReducer"
 
-import onBoardingReducer from "./reducers/onboardingReducer"
 
+const rootReducer = combineReducers({
+ onboardingReducer,
+ gameReducer
+})
 
-
-const store = createStore(onBoardingReducer, applyMiddleware(thunk))
+const store = createStore((rootReducer), applyMiddleware(thunk,logger))
 
 
 
