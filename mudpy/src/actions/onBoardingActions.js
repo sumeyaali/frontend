@@ -19,7 +19,7 @@ export const VERIFY_FAILURE = 'VERIFY_FAILURE';
 export const loginAction = (user) => dispatch => {
     dispatch({ type: LOGIN_START })
     axios
-        .post('https://lambda-mud-test.herokuapp.com/api/login/', user)
+        .post('https://mud-game-28.herokuapp.com/api/login/', user)
         .then(res => {
             localStorage.setItem("token", res.data.key)
             // localStorage.setItem('user_id', res.data.format.id)
@@ -34,7 +34,7 @@ export const loginAction = (user) => dispatch => {
 export const registerAction = (user) => dispatch => {
     dispatch({ type: REGISTER_START });
     axios
-        .post('https://lambda-mud-test.herokuapp.com/api/registration/', user)
+        .post('https://mud-game-28.herokuapp.com/api/registration/', user)
         .then(res => {
             dispatch({ type: REGISTER_SUCCESS, payload: res.data });
             // localStorage.setItem("token", res.data.token)

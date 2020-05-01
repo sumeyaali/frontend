@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(2),
-        width: '60ch',
+        width: '40ch',
       },
     },
   }));

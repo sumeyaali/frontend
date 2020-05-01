@@ -13,7 +13,7 @@ export const initWorld = () => {
     return dispatch => {
       dispatch({ type: INIT_PLAYER_START });
       axiosWithAuth()
-        .get("https://lambda-mud-test.herokuapp.com/api/adv/init/")
+        .get("https://mud-game-28.herokuapp.com/api/adv/init/")
         .then(res => {
           dispatch({ type: INIT_PLAYER_SUCCESS, payload: res.data });
         })
@@ -24,12 +24,12 @@ export const initWorld = () => {
   };
 
 
-  export const movePlayer = (direction) => {
+  export const movePlayer = (value) => {
       
       return dispatch => {
           dispatch({ type: PLAYER_MOVE_START});
           axiosWithAuth()
-          .post("https://lambda-mud-test.herokuapp.com/api/adv/move/",{direction: direction})
+          .post("https://mud-game-28.herokuapp.com/api/adv/move/",{direction: value})
           .then(res => {
             dispatch({ type: PLAYER_MOVE_SUCCESS, payload: res.data });
             console.log('DIRECTION',res.data)

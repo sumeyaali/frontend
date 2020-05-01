@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(2),
-        width: '60ch',
+        width: '40ch',
       },
     },
   }));
@@ -37,6 +37,7 @@ const [newUser,setNewUser] = useState({
     const signUp = e => {
         e.preventDefault();
         props.registerAction(newUser)
+        props.history.push('/api/login/')
     }
 
     return (
