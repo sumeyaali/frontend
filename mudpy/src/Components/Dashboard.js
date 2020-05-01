@@ -8,10 +8,13 @@ const Dashboard=()=> {
 
 
     return(
-        <div>
-        <Dungeon/>
+      
+        <div className='dash'>
+        <h1 className='title'>Lambda Adventure Game</h1>
         <Map/>
+        <Dungeon/>
         </div>
+       
     )
 
 }

@@ -11,7 +11,7 @@ import ReactDOM from "react-dom";
 
 
 const Dungeon = (props) => {
-    const [position,setPosition]=useState({top:885,left:420})
+    const [position,setPosition]=useState({top:507,left:749})
    const handleClick = e => {
         e.preventDefault()
         props.movePlayer(e.target.value)
@@ -42,11 +42,11 @@ console.log('POSITIONXXXXX',position)
         <div className='dungeon'>
             
             <div className="info">
-            <h3>name: {props.player.name}</h3>  
-            <h5>title: {props.player.title}</h5> 
-            <p>description: {props.player.description}</p>
+            <h3>Name: {props.player.name}</h3>  
+            <p>Title: {props.player.title}</p> 
+            <p>Description: {props.player.description}</p>
             <p className='players'>players: {props.player.players}</p>
-            <p>error: {props.player.err_msg}</p>
+            <p>Error: {props.player.err_msg}</p>
             </div>
             <div className='btns'>
             <button className='btn n' value ='n' onClick={handleClick}>N</button>
