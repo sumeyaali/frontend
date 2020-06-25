@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import {loginAction} from "../actions/onboardingActions"
+import {loginAction} from "../actions/onBoardingActions"
 import {initWorld} from "../actions/gameActions"
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';

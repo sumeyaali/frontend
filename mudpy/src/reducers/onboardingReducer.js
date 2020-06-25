@@ -5,7 +5,7 @@ import {
     REGISTER_START, 
     REGISTER_SUCCESS, 
     REGISTER_FAILURE,
-} from '../actions/onboardingActions'
+} from '../actions/onBoardingActions'
 
 const initialState = {
     isLoading: false,

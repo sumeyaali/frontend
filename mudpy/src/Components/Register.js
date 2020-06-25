@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import {registerAction} from "../actions/onboardingActions";
+import {registerAction} from "../actions/onBoardingActions";
 // import { FormControl,Input,InputLabel,FormHelperText,FormLabel} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
